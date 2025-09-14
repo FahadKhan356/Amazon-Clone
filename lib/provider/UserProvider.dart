@@ -1,0 +1,32 @@
+import 'package:amazon_clone_1/models/usermodel.dart';
+import 'package:flutter/material.dart';
+
+class UserProvider extends ChangeNotifier {
+  User _user = User(
+    id: '',
+    name: '',
+    email: '',
+    password: '',
+    address: '',
+    type: '',
+    token: '',
+    cart: [],
+  );
+
+  User get user => _user;
+
+  void setUser(String user) {
+    _user = User.fromjson(user);
+    notifyListeners();
+  }
+
+  void setUserfromModel(User user) {
+    _user = user;
+    notifyListeners();
+  }
+
+  // void setUserbymodel(User user) {
+  //   _user = user;
+  //   notifyListeners();
+  // }
+}
